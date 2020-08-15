@@ -1,22 +1,32 @@
-## Project setup
+## 开始
 ```
 npm install
-```
-### Compiles and hot-reloads for development
-```
 npm run serve
 ```
-### Compiles and minifies for production
+
+### 打包
 ```
 npm run build
 ```
-### Lints and fixes files
+### 调整格式
 ```
 npm run lint
 ```
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
-
+-------------
 ### 开发环境
-入口文件：public/index.html
+
+入口文件：
+```
+public/index.html
+```
+axios安装:
+
+```
+ npm i -S axios  （-S作为生产依赖）
+```
+
+pubsub-js安装: 
+
+```
+npm i -S pubsub-js  （父子组件通信）
+```
