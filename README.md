@@ -30,3 +30,7 @@ pubsub-js安装:
 ```
 npm i -S pubsub-js  （父子组件通信）
 ```
+element-ui安装
+```
+npm i -S element-ui
+```
