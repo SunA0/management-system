@@ -95,7 +95,20 @@
 </template>
 
 <script>
+// import request from '../api/test'
+import request from '@/api/test'
+
 export default {
+  created(){
+    this.fetchData()
+  },
+  methods:{
+    fetchData(){
+      request.getList().then(response => {
+        console.log(response.data)
+      })
+    }
+  },
   name: "HelloWorld",
   props: {
     msg: String
