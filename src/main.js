@@ -7,7 +7,7 @@ import router from "./router";
 
 Vue.use(ElementUI);
 
-Vue.config.productionTip = process.env.NODE_ENV === 'prodction';
+//Vue.config.productionTip = process.env.NODE_ENV === 'prodction';
 
 new Vue({
   router,
