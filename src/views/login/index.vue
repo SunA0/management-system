@@ -19,6 +19,7 @@
 </template>
 
 <script>
+import {login,getUserInfo} from '@/api/login'
 export default {
   data() {
     return {
@@ -36,8 +37,28 @@ export default {
     submitForm(formName){
       this.$refs[formName].validate((valid) => {
         if(valid){
-          alert('submit');
+          //提交表单数据给后台
+          login(this.form.username,this.form.password).then( response => {
+              const resp = response.data
+              if(resp.flag){
+                //验证成功
+                getUserInfo(resp.data.token).then(response=>{
+                  console.log(response.data)
+                  const resqUser = response.data
+                  localStorage.setItem('vue-user',JSON.stringify(resqUser.data))
+                  localStorage.setItem('vue-user-token',resqUser.data.token)
+                  this.$router.push('/')
+                })
+              }else{
+                //验证失败
+                this.$message({
+                  message:resp.message,
+                  type:'warning'
+                })
+              }
+          })
         }else{
+          //数据不合规
           console.log('xx');
           return false;
         }

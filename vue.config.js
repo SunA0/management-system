@@ -4,16 +4,16 @@ module.exports = {
         host: 'localhost',//主机名
         https: false,//协议
         open: true,//启动服务自动打开浏览器
-        // proxy:{
-        //     [process.env.VUE_APP_BASE_URL]:{
-        //         target: process.env.VUE_APP_SERVICE_URL,
-        //         changeOrigin: true,
-        //         pathRewrite:{
-        //             ['^'+process.env.VUE_APP_BASE_URL]:'',
-        //         }
+        proxy:{
+            '/dev-api':{
+                target: 'https://www.easy-mock.com/mock/5f4a003c7e1a7f3146e313b2/main',
+                changeOrigin: true,
+                pathRewrite:{
+                    '^/dev-api':'',
+                }
 
-        //     }
-        // }
+            }
+        }
     },
     lintOnSave: false,//格式检查关闭
     productionSourceMap: false //打包时不生成.map文件
