@@ -5,3 +5,9 @@
   </div>
 </template>
 
+<style>
+/* 全局字体*/
+  body{
+    font-family: "微软雅黑";
+  }
+</style>>
