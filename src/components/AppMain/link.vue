@@ -1,6 +1,6 @@
 <template>
     <!--首页不显示面包屑-->
-    <el-breadcrumb  v-show="$route.path !== '/home'" separator="/">
+    <el-breadcrumb separator="/">
         <el-breadcrumb-item class='line' :to="{ path: $route.path }">{{$route.meta.title}}</el-breadcrumb-item> 
     </el-breadcrumb>
 </template>

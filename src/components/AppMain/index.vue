@@ -1,7 +1,7 @@
 <template>
     <div class = "main">
         <!--use link -->
-        <app-link></app-link>
+        <app-link v-show="$route.path !== '/home'"></app-link>
         <router-view></router-view>
     </div>
 </template>
