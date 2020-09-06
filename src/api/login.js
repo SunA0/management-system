@@ -10,6 +10,15 @@ export function login(username,password){
         }
     })
 }
+export function logout(token){
+    return request({
+        url: 'dev-api/user/logout',
+        method: 'post',
+        data: {
+            token
+         }
+     })
+ }
 
 export function getUserInfo(token){
     return request({
