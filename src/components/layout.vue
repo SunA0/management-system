@@ -18,10 +18,13 @@
 .header{
     position: absolute;
     line-height: 50px;
+    padding-left: 10px;
     top:0px;
     left:0px;
     right:0px;
     background-color:black;
+    font-family: 'Courier New', Courier, monospace;
+    color:antiquewhite;
 }
 .navbar{
     position: absolute;
