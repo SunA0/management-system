@@ -48,7 +48,9 @@
             </el-table-column>
         </el-table>
         <!-- 分页组件 -->
-        <el-pagination @size-change="fetchData" @current-change="fetchData"
+        <el-pagination 
+            @size-change="handleSizeChange"
+            @current-change="handleCurrentChange"
             :current-page="currentPage"
             :page-sizes="[10, 20, 30, 40]"
             :page-size="pageSize"
@@ -81,6 +83,14 @@ export default{
         this.fetchData()
     },
     methods:{
+        handleSizeChange(size){
+            this.pageSize = size
+            this.fetchData()
+        },
+        handleCurrentChange(page){
+            this.currentPage = size
+            this.fetchData()
+        },
         fetchData(){
             //memberApi.getList().then(response=>{
             memberApi.search(this.currentPage,this.pageSize,this.searchMap).then(response=>{
