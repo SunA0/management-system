@@ -2,13 +2,13 @@
     <div>
         <!-- 搜索 -->
         <el-form ref=’searchForm‘ :inline="true" :model="searchMap" class="demo-form-inline">
-            <el-form-item>
+            <el-form-item prop='name'>
                 <el-input v-model="searchMap.user" placeholder="会员名字"></el-input>
             </el-form-item>
-            <el-form-item>
+            <el-form-item prop='card'>
                 <el-input v-model="searchMap.card" placeholder="会员卡号"></el-input>
             </el-form-item>
-            <el-form-item>
+            <el-form-item prop='type'>
                 <el-select v-model="searchMap.type" placeholder="支付类型">
                     <el-option v-for="option in payTypeOptions" 
                     :key="option.type"
@@ -19,6 +19,7 @@
             </el-form-item>
             <el-form-item>
                 <el-button type="primary" @click="fetchData">查询</el-button>
+                <!-- <el-button @click="resetForm('searchForm')">重置</el-button> -->
             </el-form-item>
         </el-form>
         <!-- 表格组件 -->
@@ -83,6 +84,11 @@ export default{
         this.fetchData()
     },
     methods:{
+        resetForm(formName){
+            console.log(formName)
+            this.$refs[formName].resetFields();
+
+        },
         handleSizeChange(size){
             this.pageSize = size
             this.fetchData()
